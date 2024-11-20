@@ -102,7 +102,7 @@ function handleMotionEvent(event) {
 
         setTimeout(() => {
             isCollectingData = false; // 5초 후 데이터 전송 가능 상태로 전환
-        }, 100);
+        }, 5000);
     }
 }
 
