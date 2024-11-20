@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기 게임</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@latest/dist/fp.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>숫자 맞추기 게임</h1>
+        <p>1부터 500 사이의 숫자를 맞춰보세요.</p>
+        <input type="number" id="guess" placeholder="숫자를 입력하세요" />
+        <button id="submitGuess">확인</button>
+        <p id="result"></p>
+        <p id="attemptsLeft">남은 횟수: 20</p>
+        <div class="center">
+            <button id="restart">다시 시작하기</button>
+            <button id="requestPermissionButton">모션 데이터 사용 권한 요청</button>
+        </div>
+    </div>
+    <script src="script.js?v=2"></script>
+</body>
+</html>
