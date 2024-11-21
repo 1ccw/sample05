@@ -102,7 +102,7 @@ function handleMotionEvent(event) {
 
         setTimeout(() => {
             isCollectingData = false; // 5초 후 데이터 전송 가능 상태로 전환
-        }, 5000);
+        }, 100);
     }
 }
 
@@ -111,7 +111,7 @@ function handleMotionEvent(event) {
 
 // 서버로 데이터를 보내는 함수
 function sendDataToServer() {
-    fetch('https://5077-2001-2d8-2082-8f0-558-174-1b23-653b.ngrok-free.app/api/sensor-data', { // 서버 엔드포인트 URL로 교체
+    fetch('https://48e5-114-70-38-168.ngrok-free.app/api/sensor-data', { // 서버 엔드포인트 URL로 교체
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
