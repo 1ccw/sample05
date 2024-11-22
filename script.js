@@ -128,3 +128,19 @@ function sendDataToServer() {
     .then(data => console.log('Data successfully sent to server:', data))
     .catch(error => console.error('Error sending data to server:', error));
 }
+
+const backgroundMusic = document.getElementById('background-music');
+const musicToggle = document.getElementById('music-toggle');
+let isPlaying = false;
+
+musicToggle.addEventListener('click', () => {
+    if (isPlaying) {
+        backgroundMusic.pause();
+        musicToggle.textContent = "음악 재생";
+    } else {
+        backgroundMusic.play();
+        musicToggle.textContent = "음악 정지";
+    }
+    isPlaying = !isPlaying;
+});
+
