@@ -147,7 +147,7 @@ musicToggle.addEventListener('click', () => {
 
 let audioContext = null;
 let oscillator = null;
-let isPlaying = false;
+let isPlaying_sine = false;
 
 // 버튼 가져오기
 const toggleButton = document.getElementById('sine-toggle');
@@ -158,11 +158,11 @@ toggleButton.addEventListener('click', () => {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
     }
 
-    if (isPlaying) {
+    if (isPlaying_sine) {
         // 사인파 정지
         oscillator.stop();
         oscillator = null;
-        isPlaying = false;
+        isPlaying_sine = false;
         toggleButton.textContent = "사인파 재생";
     } else {
         // 사인파 생성 및 재생
@@ -172,7 +172,7 @@ toggleButton.addEventListener('click', () => {
         oscillator.connect(audioContext.destination);
         oscillator.start();
 
-        isPlaying = true;
+        isPlaying_sine = true;
         toggleButton.textContent = "사인파 정지";
     }
 });
