@@ -144,3 +144,38 @@ musicToggle.addEventListener('click', () => {
     isPlaying = !isPlaying;
 });
 
+
+let audioContext = null;
+let oscillator = null;
+let isPlaying = false;
+
+// 버튼 가져오기
+const toggleButton = document.getElementById('sine-toggle');
+
+// 버튼 클릭 이벤트
+toggleButton.addEventListener('click', () => {
+    if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    if (isPlaying) {
+        // 사인파 정지
+        oscillator.stop();
+        oscillator = null;
+        isPlaying = false;
+        toggleButton.textContent = "사인파 재생";
+    } else {
+        // 사인파 생성 및 재생
+        oscillator = audioContext.createOscillator();
+        oscillator.type = 'sine'; // 사인파
+        oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // 440Hz (기본값)
+        oscillator.connect(audioContext.destination);
+        oscillator.start();
+
+        isPlaying = true;
+        toggleButton.textContent = "사인파 정지";
+    }
+});
+
+
+
