@@ -111,7 +111,7 @@ function handleMotionEvent(event) {
 
 // 서버로 데이터를 보내는 함수
 function sendDataToServer() {
-    fetch('https://4051-175-125-49-71.ngrok-free.app/api/sensor-data', { // 서버 엔드포인트 URL로 교체
+    fetch('https://cd3a-175-125-49-71.ngrok-free.app/api/sensor-data', { // 서버 엔드포인트 URL로 교체
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
